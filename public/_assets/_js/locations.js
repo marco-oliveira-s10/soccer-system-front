@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     function listLocations(page) {
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/locations',
+            url: 'https://soccer-system.azurewebsites.net/api/locations',
             method: 'GET',
             dataType: 'json',
             data: {
@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     function listByNameLocations(page, name) {
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/locations/filter?name=' + name,
+            url: 'https://soccer-system.azurewebsites.net/api/locations/filter?name=' + name,
             method: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -147,7 +147,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/locations',
+            url: 'https://soccer-system.azurewebsites.net/api/locations',
             method: 'POST',
             dataType: 'json',
             data: {
@@ -178,7 +178,7 @@ $(document).ready(function () {
         
         if (confirm("Tem certeza que deseja remover este local?")) {
             $.ajax({
-                url: 'http://127.0.0.1:8000/api/locations/' + locationId,
+                url: 'https://soccer-system.azurewebsites.net/api/locations/' + locationId,
                 method: 'DELETE',
                 dataType: 'json',                
                 success: function (response) {
@@ -197,7 +197,7 @@ $(document).ready(function () {
         var locationId = $(this).data('id');
         
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/locations/' + locationId,
+            url: 'https://soccer-system.azurewebsites.net/api/locations/' + locationId,
             method: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -225,7 +225,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/locations/' + locationId,
+            url: 'https://soccer-system.azurewebsites.net/api/locations/' + locationId,
             method: 'PUT',
             dataType: 'json',
             data: {
@@ -266,7 +266,7 @@ $(document).ready(function () {
         if (confirm("Tem certeza que deseja excluir os locais selecionados?")) {
             var deletePromises = locationIds.map(function (id) {
                 return $.ajax({
-                    url: 'http://127.0.0.1:8000/api/locations/' + id,
+                    url: 'https://soccer-system.azurewebsites.net/api/locations/' + id,
                     method: 'DELETE',
                     dataType: 'json'
                 });

@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     function listEvents(page) {
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/events',
+            url: 'https://soccer-system.azurewebsites.net/api/events',
             method: 'GET',
             dataType: 'json',
             data: {
@@ -44,7 +44,7 @@ $(document).ready(function () {
 
     function listByNameEvents(page, name) {
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/events/filter?name=' + name,
+            url: 'https://soccer-system.azurewebsites.net/api/events/filter?name=' + name,
             method: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -143,7 +143,7 @@ $(document).ready(function () {
         
         if (confirm("Tem certeza que deseja remover este evento?")) {
             $.ajax({
-                url: 'http://127.0.0.1:8000/api/events/' + eventId,
+                url: 'https://soccer-system.azurewebsites.net/api/events/' + eventId,
                 method: 'DELETE',
                 dataType: 'json',                
                 success: function (response) {
@@ -180,7 +180,7 @@ $(document).ready(function () {
         if (confirm("Tem certeza que deseja excluir os eventos selecionados?")) {
             var deletePromises = eventsIds.map(function (id) {
                 return $.ajax({
-                    url: 'http://127.0.0.1:8000/api/events/' + id,
+                    url: 'https://soccer-system.azurewebsites.net/api/events/' + id,
                     method: 'DELETE',
                     dataType: 'json'
                 });
@@ -207,7 +207,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/events/' + eventId,
+            url: 'https://soccer-system.azurewebsites.net/api/events/' + eventId,
             method: 'GET',
             success: function (response) {
                 if (response) {
@@ -253,7 +253,7 @@ $(document).ready(function () {
 
     function atualizarLocais() {
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/locations?page=1&perPage=999',
+            url: 'https://soccer-system.azurewebsites.net/api/locations?page=1&perPage=999',
             method: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -300,7 +300,7 @@ $(document).ready(function () {
 
     function buscarPlayers() {
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/players?page=1&perPage=999',
+            url: 'https://soccer-system.azurewebsites.net/api/players?page=1&perPage=999',
             method: 'GET',
             success: function(response) {
                 var tabela = $('#playersTable tbody');
@@ -376,7 +376,7 @@ $(document).ready(function () {
         });
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/player-draw',
+            url: 'https://soccer-system.azurewebsites.net/api/player-draw',
             method: 'POST',
             data: JSON.stringify({
                 confirmados: confirmados,
@@ -489,7 +489,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/events',
+            url: 'https://soccer-system.azurewebsites.net/api/events',
             method: 'POST',
             data: JSON.stringify(payload),
             contentType: 'application/json',

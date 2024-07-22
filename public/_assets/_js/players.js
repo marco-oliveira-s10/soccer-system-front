@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     function listPlayers(page) {        
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/players',
+            url: 'https://soccer-system.azurewebsites.net/api/players',
             method: 'GET',
             dataType: 'json',
             data: {
@@ -45,7 +45,7 @@ $(document).ready(function () {
 
     function listByNamePlayers(page, name) {        
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/players/filter?name=' + name,
+            url: 'https://soccer-system.azurewebsites.net/api/players/filter?name=' + name,
             method: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -153,7 +153,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/players',
+            url: 'https://soccer-system.azurewebsites.net/api/players',
             method: 'POST',
             dataType: 'json',
             data: {
@@ -186,7 +186,7 @@ $(document).ready(function () {
         
         if (confirm("Tem certeza que deseja remover este jogador?")) {
             $.ajax({
-                url: 'http://127.0.0.1:8000/api/players/' + playerId,
+                url: 'https://soccer-system.azurewebsites.net/api/players/' + playerId,
                 method: 'DELETE',
                 dataType: 'json',
                 success: function (response) {
@@ -205,7 +205,7 @@ $(document).ready(function () {
         var playerId = $(this).data('id');
         
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/players/' + playerId,
+            url: 'https://soccer-system.azurewebsites.net/api/players/' + playerId,
             method: 'GET',
             dataType: 'json',
             success: function (response) {
@@ -237,7 +237,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/players/' + playerId,
+            url: 'https://soccer-system.azurewebsites.net/api/players/' + playerId,
             method: 'PUT',
             dataType: 'json',
             data: {
@@ -280,7 +280,7 @@ $(document).ready(function () {
         if (confirm("Tem certeza que deseja excluir os jogadores selecionados?")) {
             var deletePromises = playersIds.map(function (id) {
                 return $.ajax({
-                    url: 'http://127.0.0.1:8000/api/players/' + id,
+                    url: 'https://soccer-system.azurewebsites.net/api/players/' + id,
                     method: 'DELETE',
                     dataType: 'json'
                 });
